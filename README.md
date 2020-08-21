@@ -1,6 +1,6 @@
 # Veeva Approved Email - Package manager 
 
-> This tool is designed to help streamline the building, tetsing and deployment of Veeva Approved Emails with fragments
+> This tool is designed to help streamline the building, testing and deployment of Veeva Approved Emails with fragments. It has already been used in a production environment for multiple projects. This tool will provide you with a simple way to view the VAE template in a browser, with all fragments included, and to provide you with the packaged template and fragments as per Veeva requirements. 
 
 ## Quick start...
 
