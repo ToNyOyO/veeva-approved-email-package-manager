@@ -31,7 +31,7 @@ function setup(cb) {
 
     // create images folder
     gulp.src('*.*', {read: false})
-        .pipe(gulp.dest('./src/images'));
+        .pipe(gulp.dest('./src/images/template'));
 
     // create template folder
     gulp.src('*.*', {read: false})
@@ -45,8 +45,32 @@ function setup(cb) {
     gulp.src('*.*', {read: false})
         .pipe(gulp.dest('./dist'));
 
-    cb();
+    // create template file
+    fs.writeFile('./src/template/template.html', '<html>[make a template]</html>', cb);
 }
+
+
+/*************************************************************************************
+ * Create new fragment
+ * @param cb
+ */
+function fragment(cb) {
+
+    if (arg.new === undefined) {
+        console.log("\x1b[31m%s\x1b[0m", 'EXAMPLE: > gulp fragment --new "Fragment name"');
+        cb();
+        return;
+    }
+
+    let fragName = arg.new.replace(/ /g, "-");
+
+    fs.writeFile('./src/fragments/' + fragName + '.html', '<tr>\r\n    <td>[add your fragment content here]</td>\r\n</tr>', cb);
+
+    // create fragment folder
+    gulp.src('*.*', {read: false})
+        .pipe(gulp.dest('./src/images/' + fragName));
+}
+
 
 /*************************************************************************************
  * Build as single html file with fragments embedded for browser-based testing
@@ -175,6 +199,39 @@ exports.default = defaultTask;
 
 exports.setup = setup;
 
+exports.fragment = fragment;
+
 exports.build = buildForTesting;
 
 exports.dist = packageForDistribution;
+
+
+// fetch command line arguments
+const arg = (argList => {
+
+    let arg = {}, a, opt, thisOpt, curOpt;
+    for (a = 0; a < argList.length; a++) {
+
+        thisOpt = argList[a].trim();
+        opt = thisOpt.replace(/^\-+/, '');
+
+        if (opt === thisOpt) {
+
+            // argument value
+            if (curOpt) arg[curOpt] = opt.replace(/([^a-z0-9_-]+)/gi, ' ').trim();
+            curOpt = null;
+
+        }
+        else {
+
+            // argument name
+            curOpt = opt;
+            arg[curOpt] = true;
+
+        }
+
+    }
+
+    return arg;
+
+})(process.argv);
