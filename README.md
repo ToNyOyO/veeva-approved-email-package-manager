@@ -82,7 +82,12 @@ Create the project folder structure
 ```
 $ gulp
 ```
-Watch the `fragments`, `images`, and `template` file for changes and run the `build` command.
+Watch the `fragments`, `images`, and `template` files for changes and run the `build` command automatically. 
+
+You may like to implement something to refresh your browser when this command runs but I prefer to press F5 myself.  
+
+Here's an example of how to implement a live reload if that's what you're into: 
+<https://stackoverflow.com/questions/43415506/how-to-make-a-refresh-in-browser-with-gulp/43463567>
 
 ```
 $ gulp build
