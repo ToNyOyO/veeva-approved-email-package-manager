@@ -2,7 +2,7 @@
 
 ## File structure
 
-You'll need to make the following file structure: 
+You'll need to make the following file structure which can be done by running `$gulp setup`: 
 
 ```
 root/
