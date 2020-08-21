@@ -122,7 +122,7 @@ This VAE packaging system requires that images in your fragment are loaded from 
 
 #### Including fragments in the template for testing
 
-Frgaments are injected into the template using the following method. This is only for the purpose of testing the email (with all fragments) in a web browser or, for example, uploading to Litmus for email client testing. 
+Fragments are injected into the template using the following method:
 
 ```
 <table>
@@ -136,7 +136,7 @@ Frgaments are injected into the template using the following method. This is onl
 </table>
 ```
 
-
+This is only for the purpose of testing the email (with all fragments) in a web browser or, for example, uploading to Litmus for email client testing. 
 
 ```
 $ gulp build
