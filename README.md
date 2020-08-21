@@ -1,5 +1,13 @@
 # Veeva Approved Email - Package manager 
 
+## Quick start...
+
+- Copy these files into a new project folder
+- Run npm install
+- Run gulp setup
+- Then start creating your fragments:
+ - Run gulp fragment --new "Fragment Name" for each fragment
+
 ## File structure
 
 You'll need to make the following folder structure which can be done by running `$ gulp setup`: 
