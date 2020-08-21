@@ -45,8 +45,10 @@ function setup(cb) {
     gulp.src('*.*', {read: false})
         .pipe(gulp.dest('./dist'));
 
-    // create template file
-    fs.writeFile('./src/template/template.html', '<html>[make a template]</html>', cb);
+    setTimeout(function () {
+        // create template file
+        fs.writeFile('./src/template/template.html', '<html>[make a template]</html>', cb);
+    }, 500);
 }
 
 
