@@ -17,6 +17,10 @@ root/
 |—— package.json
 ```
 
+The `template` folder will contain you Veeva Approved Email template. It doesn't matter what your `html` file is called. 
+
+Each fragment needs to go in its own folder in `fragments`. You should give your fragment `html` files sensible, relevant names. 
+
 ## Including fragments in the template for testing
 
 Frgaments are injected into the template using the following method. This is only for the purpose of testing the email (with all fragments) in a web browser or, for example, uploading to Litmus for email client testing. 
