@@ -6,7 +6,7 @@
 - Run npm install
 - Run gulp setup
 - Then start creating your fragments:
- - Run gulp fragment --new "Fragment Name" for each fragment
+  - Run gulp fragment --new "Fragment Name" for each fragment
 
 ## File structure
 
