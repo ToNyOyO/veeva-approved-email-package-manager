@@ -11,6 +11,15 @@ const rimraf = require('rimraf'); // delete a folder that contains files
 
 const htmlFiles = glob.sync('./src/fragments/*.html'); // get list of fragments from folder
 
+function defaultTask(cb) {
+
+    gulp.watch([
+        './src/**/*.*'
+    ], buildForTesting).on('end', function() {console.log('test')});
+
+    cb();
+}
+
 /************************************************************************************
  * setup the basic project structure
  * @param cb
@@ -162,8 +171,10 @@ function packageForDistribution(cb) {
 
 }
 
-exports.default = buildForTesting;
+exports.default = defaultTask;
 
 exports.setup = setup;
+
+exports.build = buildForTesting;
 
 exports.dist = packageForDistribution;
