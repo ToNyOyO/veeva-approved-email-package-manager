@@ -7,7 +7,18 @@ You'll need to make the following file structure which can be done by running `$
 ```
 root/
 |—— build/
+|   |—— images/
+|   |—— template-with-embedded-fragments.html
 |—— dist/
+|   |—— fragment-name-1/
+|   |   |—— images.zip
+|   |   |—— index.html
+|   |—— fragment-name-2/
+|   |   |—— images.zip
+|   |   |—— index.html
+|   |—— template/
+|   |   |—— images.zip
+|   |   |—— index.html
 |—— src/
 |   |—— fragments/
 |   |   |—— fragment-name-1.html
@@ -105,9 +116,7 @@ $ gulp dist
 Package the template and fragments in accordance with Veeva requirements: 
 
 - Copy the template into `dist`>`template` and rename to `index.html`
-- Copy the template images into `dist`>`template`>`images` and place the `images` folder into `images.zip`
-- Remove `dist`>`template`>`images` folder
+- Copy all the template images into an images folder, and into `images.zip` 
 
 - Copy each fragment into `dist`>`fragment-name` and rename to `index.html`
-- Copy each fragment's images into `dist`>`fragment-name`>`images` and place the `images` folder into `images.zip`
-- Remove each `dist`>`fragment-name`>`images` folder
+- Copy all the fragment images into an images folder, and into `images.zip`, for each fragment 
