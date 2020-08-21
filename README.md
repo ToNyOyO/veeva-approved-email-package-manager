@@ -89,7 +89,10 @@ You may like to implement something to refresh your browser when this command ru
 ```
 $ gulp build
 ```
+*All files and folders in `build` will be erased before this command runs*
+
 Convert the fragments and template into a single `html` file for local testing: 
+
 - Compile the images into `build`>`images`
 - Compile the fragments into the template to create a single `html` file which can be viewed in a web browser 
 - Place the compiled `html` file in the `build` folder
@@ -97,8 +100,14 @@ Convert the fragments and template into a single `html` file for local testing:
 ```
 $ gulp dist
 ```
+*All files and folders in `dist` will be erased before this command runs*
+
 Package the template and fragments in accordance with Veeva requirements: 
-- Copy the template into `dist`>`template`
-- Copy the template images into `dist`>`template`>`images.zip`
-- Copy each fragment into `dist`>`fragment-name`
-- Copy each fragment's images into `dist`>`fragment-name`>`images.zip`
+
+- Copy the template into `dist`>`template` and rename to `index.html`
+- Copy the template images into `dist`>`template`>`images` and place the `images` folder into `images.zip`
+- Remove `dist`>`template`>`images` folder
+
+- Copy each fragment into `dist`>`fragment-name` and rename to `index.html`
+- Copy each fragment's images into `dist`>`fragment-name`>`images` and place the `images` folder into `images.zip`
+- Remove each `dist`>`fragment-name`>`images` folder
