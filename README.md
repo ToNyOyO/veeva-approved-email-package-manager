@@ -2,7 +2,7 @@
 
 ## File structure
 
-You'll need to make the following file structure which can be done by running `$gulp setup`: 
+You'll need to make the following file structure which can be done by running `$ gulp setup`: 
 
 ```
 root/
@@ -50,15 +50,26 @@ Frgaments are injected into the template using the following method. This is onl
 TASKS
 _________________________________________________________________________
 
-$ gulp                                        Build task 
+$ gulp                                        Watch src folder for changes
 $ gulp setup                                  Setup folder structure
+$ gulp build                                  Build task
 $ gulp dist                                   Deploy task
 ```
 
 ### In depth
 
 ```
-$ gulp 
+$ gulp setup
+```
+Create the project folder structure
+
+```
+$ gulp
+```
+Watch the `fragments`, `images`, and `template` file for changes and run the `build` command.
+
+```
+$ gulp build
 ```
 Convert the fragments and template into a single `html` file for local testing: 
 - Compile the images into `build`>`images`
