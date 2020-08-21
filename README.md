@@ -63,6 +63,7 @@ _________________________________________________________________________
 
 $ gulp                                        Watch src folder for changes
 $ gulp setup                                  Setup folder structure
+$ gulp fragment --new "Fragment name"         Create a new fragment
 $ gulp build                                  Build task
 $ gulp dist                                   Deploy task
 ```
@@ -85,6 +86,8 @@ root/
 ```
 
 It's up to you to make your own html files. The template filename doesn't matter, anything will do as long as it's a sensible file name. 
+
+*This should also create the template.html file but this has not been tested yet*
 
 When adding images for a fragment, you need to put those images in a folder with the fragment name. The image name doesn't matter: 
 
@@ -118,6 +121,22 @@ $ gulp
 Watch the `fragments`, `images`, and `template` files for changes and run the `build` command automatically. 
 
 You may like to implement something to refresh your browser when this command runs but I prefer to press F5 myself. Here's an example of how to implement a live reload if that's what you're into: <https://stackoverflow.com/questions/43415506/how-to-make-a-refresh-in-browser-with-gulp/43463567>
+
+```
+$ gulp fragment --new "Fragment name"
+```
+*This has not been tested yet*
+
+This *should* create an empty fragment `html` file in fragments and an empty images folder in images with the same name. 
+
+```
+root/
+|—— src/
+|   |—— images/
+|   |   |—— your-new-fragment/
+|   |—— fragments/
+|   |   |—— your-new-fragment.html
+```
 
 ```
 $ gulp build
