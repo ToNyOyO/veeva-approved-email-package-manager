@@ -20,7 +20,7 @@ root/
 |   |   |—— template/
 |   |   |   |—— template-images.png
 |   |—— template/
-|   |   |—— template-name.html
+|   |   |—— your-template.html
 |
 |—— gulfile.js
 |—— package.json
@@ -104,7 +104,18 @@ root/
 |   |   |   |—— another-image.jpg
 ```
 
-Template images obviously go in a folder named `template`. 
+Template images obviously go into `images`>`template`. 
+
+```
+root/
+|—— src/
+|   |—— images/
+|   |   |—— template/
+|   |   |   |—— an-image.png
+|   |   |   |—— another-image.jpg
+|   |—— template/
+|   |   |—— your-template.html
+```
 
 ```
 $ gulp
