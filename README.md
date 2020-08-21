@@ -42,6 +42,22 @@ Frgaments are injected into the template using the following method. This is onl
 </table>
 ```
 
+## Making a fragment 
+
+This VAE packaging system requires that images in your fragment are loaded from `root`>`images`. Remember that fragments in Veeva always use a table format and the content is always encapsulated in `<tr></tr>`. 
+
+```
+<tr>
+  <td width="20"></td>
+  <td width="610">
+  
+    <img alt="This is an image" src="images/your-image-name.png" width="200px" height="50px" style="display:block;border:0;" />
+  
+  </td>
+  <td width="20"></td>
+</tr>
+```
+
 ## Gulp Tasks and Workflow
 
 ### Overview
