@@ -21,38 +21,6 @@ The `template` folder will contain you Veeva Approved Email template. It doesn't
 
 Each fragment needs to go in its own folder in `fragments`. You should give your fragment `html` files sensible, relevant names. 
 
-## Including fragments in the template for testing
-
-Frgaments are injected into the template using the following method. This is only for the purpose of testing the email (with all fragments) in a web browser or, for example, uploading to Litmus for email client testing. 
-
-```
-<table>
-  <!-- inject:../fragments/fragment-name-1.html -->
-  <!-- endinject -->
-
-  <!-- inject:../fragments/fragment-name-2.html -->
-  <!-- endinject -->
-
-  {{insertEmailFragments[1,5]}}
-</table>
-```
-
-## Making a fragment 
-
-This VAE packaging system requires that images in your fragment are loaded from `root`>`images`. Remember that fragments in Veeva always use a table format and the content is always encapsulated in `<tr></tr>`. 
-
-```
-<tr>
-  <td width="20"></td>
-  <td width="610">
-  
-    <img alt="This is an image" src="images/your-image-name.png" width="200px" height="50px" style="display:block;border:0;" />
-  
-  </td>
-  <td width="20"></td>
-</tr>
-```
-
 ## Gulp Tasks and Workflow
 
 ### Overview
@@ -69,6 +37,13 @@ $ gulp dist                                   Deploy task
 ```
 
 ### In depth
+
+```
+$ gulp
+```
+Watch the `fragments`, `images`, and `template` files for changes and run the `build` command automatically. 
+
+You may like to implement something to refresh your browser when this command runs but I prefer to press F5 myself. Here's an example of how to implement a live reload if that's what you're into: <https://stackoverflow.com/questions/43415506/how-to-make-a-refresh-in-browser-with-gulp/43463567>
 
 ```
 $ gulp setup
@@ -114,13 +89,6 @@ root/
 ```
 
 ```
-$ gulp
-```
-Watch the `fragments`, `images`, and `template` files for changes and run the `build` command automatically. 
-
-You may like to implement something to refresh your browser when this command runs but I prefer to press F5 myself. Here's an example of how to implement a live reload if that's what you're into: <https://stackoverflow.com/questions/43415506/how-to-make-a-refresh-in-browser-with-gulp/43463567>
-
-```
 $ gulp fragment --new "Fragment name"
 ```
 This will create an empty fragment `html` file in fragments and an empty images folder in images with the same name. 
@@ -132,6 +100,38 @@ root/
 |   |   |—— your-new-fragment/
 |   |—— fragments/
 |   |   |—— your-new-fragment.html
+```
+
+#### Making a fragment 
+
+This VAE packaging system requires that images in your fragment are loaded from `root`>`images`. Remember that fragments in Veeva always use a table format and the content is always encapsulated in `<tr></tr>`. 
+
+```
+<tr>
+  <td width="20"></td>
+  <td width="610">
+  
+    <img alt="This is an image" src="images/your-image-name.png" width="200px" height="50px" style="display:block;border:0;" />
+  
+  </td>
+  <td width="20"></td>
+</tr>
+```
+
+#### Including fragments in the template for testing
+
+Frgaments are injected into the template using the following method. This is only for the purpose of testing the email (with all fragments) in a web browser or, for example, uploading to Litmus for email client testing. 
+
+```
+<table>
+  <!-- inject:../fragments/fragment-name-1.html -->
+  <!-- endinject -->
+
+  <!-- inject:../fragments/fragment-name-2.html -->
+  <!-- endinject -->
+
+  {{insertEmailFragments[1,5]}}
+</table>
 ```
 
 ```
