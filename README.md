@@ -7,18 +7,7 @@ You'll need to make the following file structure which can be done by running `$
 ```
 root/
 |—— build/
-|   |—— images/
-|   |—— template-with-embedded-fragments.html
 |—— dist/
-|   |—— fragment-name-1/
-|   |   |—— images.zip
-|   |   |—— index.html
-|   |—— fragment-name-2/
-|   |   |—— images.zip
-|   |   |—— index.html
-|   |—— template/
-|   |   |—— images.zip
-|   |   |—— index.html
 |—— src/
 |   |—— fragments/
 |   |   |—— fragment-name-1.html
@@ -88,7 +77,34 @@ $ gulp dist                                   Deploy task
 ```
 $ gulp setup
 ```
-Create the project folder structure
+Create the project folder structure:
+
+```
+root/
+|—— build/
+|—— dist/
+|—— src/
+|   |—— fragments/
+|   |—— images/
+|   |—— template/
+```
+
+It's up to you to make your own html files. The template filename doesn't matter, anything will do as long as it's a sensible file name. 
+
+When adding images for a fragment, you need to put those images in a folder with the fragment name. The image name doesn't matter: 
+
+```
+root/
+|—— src/
+|   |—— fragments/
+|   |   |—— fragment-name-1.html
+|   |—— images/
+|   |   |—— fragment-name-1/
+|   |   |   |—— an-image.png
+|   |   |   |—— another-image.jpg
+```
+
+Template images obviously go in a folder named `template`. 
 
 ```
 $ gulp
@@ -104,6 +120,16 @@ $ gulp build
 
 Convert the fragments and template into a single `html` file for local testing: 
 
+```
+root/
+|—— build/
+|   |—— images/
+|   |   |—— all.png
+|   |   |—— the.png
+|   |   |—— imgs.png
+|   |—— template-with-embedded-fragments.html
+```
+
 - Compile the images into `build`>`images`
 - Compile the fragments into the template to create a single `html` file which can be viewed in a web browser 
 - Place the compiled `html` file in the `build` folder
@@ -114,6 +140,20 @@ $ gulp dist
 *All files and folders in `dist` will be erased before this command runs*
 
 Package the template and fragments in accordance with Veeva requirements: 
+
+```
+root/
+|—— dist/
+|   |—— fragment-name-1/
+|   |   |—— images.zip
+|   |   |—— index.html
+|   |—— fragment-name-2/
+|   |   |—— images.zip
+|   |   |—— index.html
+|   |—— template/
+|   |   |—— images.zip
+|   |   |—— index.html
+```
 
 - Copy the template into `dist`>`template` and rename to `index.html`
 - Copy all the template images into an images folder, and into `images.zip` 
