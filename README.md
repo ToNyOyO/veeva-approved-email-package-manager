@@ -87,8 +87,6 @@ root/
 
 It's up to you to make your own html files. The template filename doesn't matter, anything will do as long as it's a sensible file name. 
 
-*This should also create the template.html file but this has not been tested yet*
-
 When adding images for a fragment, you need to put those images in a folder with the fragment name. The image name doesn't matter: 
 
 ```
@@ -125,9 +123,7 @@ You may like to implement something to refresh your browser when this command ru
 ```
 $ gulp fragment --new "Fragment name"
 ```
-*This has not been tested yet*
-
-This *should* create an empty fragment `html` file in fragments and an empty images folder in images with the same name. 
+This will create an empty fragment `html` file in fragments and an empty images folder in images with the same name. 
 
 ```
 root/
