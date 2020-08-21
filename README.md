@@ -60,7 +60,9 @@ root/
 |   |—— template/
 ```
 
-It's up to you to make your own html files. The template filename doesn't matter, anything will do as long as it's a sensible file name. 
+This will create an empty template file for you, and the associated image folder for that template. 
+
+The template filename doesn't actually matter so rename it if you like; anything will do as long as it's a sensible file name. *DO NOT* change the name of the template image folder. It *must* be called `template`. 
 
 When adding images for a fragment, you need to put those images in a folder with the fragment name. The image name doesn't matter: 
 
