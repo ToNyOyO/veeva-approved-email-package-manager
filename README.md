@@ -2,7 +2,7 @@
 
 ## File structure
 
-You'll need to make the following file structure which can be done by running `$ gulp setup`: 
+You'll need to make the following folder structure which can be done by running `$ gulp setup`: 
 
 ```
 root/
@@ -10,17 +10,8 @@ root/
 |—— dist/
 |—— src/
 |   |—— fragments/
-|   |   |—— fragment-name-1.html
-|   |   |—— fragment-name-2.html
 |   |—— images/
-|   |   |—— fragment-name-1/
-|   |   |   |—— fragment-1-images.png
-|   |   |—— fragment-name-2/
-|   |   |   |—— fragment-2-images.png
-|   |   |—— template/
-|   |   |   |—— template-images.png
 |   |—— template/
-|   |   |—— your-template.html
 |
 |—— gulfile.js
 |—— package.json
