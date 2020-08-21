@@ -26,9 +26,9 @@ root/
 |—— package.json
 ```
 
-## Including fragments for testing
+## Including fragments in the template for testing
 
-Frgaments are injected into the template using the following method. This is only for the purpose of testing the email, with all fragments, in a web browser or for upload to Litmus for email client testing. 
+Frgaments are injected into the template using the following method. This is only for the purpose of testing the email (with all fragments) in a web browser or, for example, uploading to Litmus for email client testing. 
 
 ```
 <table>
@@ -60,6 +60,7 @@ $ gulp dist                                   Deploy task
 ```
 $ gulp 
 ```
+Convert the fragments and template into a single `html` file for local testing: 
 - Compile the images into `build`>`images`
 - Compile the fragments into the template to create a single `html` file which can be viewed in a web browser 
 - Place the compiled `html` file in the `build` folder
@@ -67,6 +68,7 @@ $ gulp
 ```
 $ gulp dist
 ```
+Package the template and fragments in accordance with Veeva requirements: 
 - Copy the template into `dist`>`template`
 - Copy the template images into `dist`>`template`>`images.zip`
 - Copy each fragment into `dist`>`fragment-name`
