@@ -11,6 +11,34 @@ const rimraf = require('rimraf'); // delete a folder that contains files
 
 const htmlFiles = glob.sync('./src/fragments/*.html'); // get list of fragments from folder
 
+/************************************************************************************
+ * setup the basic project structure
+ * @param cb
+ */
+function setup(cb) {
+    // create fragments folder
+    gulp.src('*.*', {read: false})
+        .pipe(gulp.dest('./src/fragments'));
+
+    // create images folder
+    gulp.src('*.*', {read: false})
+        .pipe(gulp.dest('./src/images'));
+
+    // create template folder
+    gulp.src('*.*', {read: false})
+        .pipe(gulp.dest('./src/template'));
+
+    // create build folder
+    gulp.src('*.*', {read: false})
+        .pipe(gulp.dest('./build'));
+
+    // create dist folder
+    gulp.src('*.*', {read: false})
+        .pipe(gulp.dest('./dist'));
+
+    cb();
+}
+
 /*************************************************************************************
  * Build as single html file with fragments embedded for browser-based testing
  * @param cb
@@ -135,5 +163,7 @@ function packageForDistribution(cb) {
 }
 
 exports.default = buildForTesting;
+
+exports.setup = setup;
 
 exports.dist = packageForDistribution;
