@@ -1,12 +1,14 @@
 # Veeva Approved Email - Package manager 
 
+> This tool is designed to help streamline the building, tetsing and deployment of Veeva Approved Emails with fragments
+
 ## Quick start...
 
 - Copy these files into a new project folder
-- Run npm install
-- Run gulp setup
+- Run `npm install`
+- Run `gulp setup`
 - Then start creating your fragments:
-  - Run gulp fragment --new "Fragment Name" for each fragment
+  - Run `gulp fragment --new "Fragment Name"` for each fragment you want to create
 
 ## File structure
 
